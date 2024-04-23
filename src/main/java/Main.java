@@ -6,5 +6,11 @@ public class Main {
 
         Library myLib = new Library(new Book[]{georgeOrwell, harperLee, danBrown});
         System.out.println(myLib);
+
+        Book jonasHonecker = new Book("Yoyoyoyo", "Jonas Honecker", "1337-3537");
+        myLib.addBook(jonasHonecker);
+        System.out.println(myLib);
+        myLib.deleteBookByIsbn("1337-3537");
+        System.out.println(myLib);
     }
 }
