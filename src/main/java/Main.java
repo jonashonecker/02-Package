@@ -11,6 +11,8 @@ public class Main {
         myLib.addBook(jonasHonecker);
         System.out.println(myLib);
         myLib.deleteBookByIsbn("1337-3537");
+        myLib.deleteBookByIsbn("978-0061120084");
+        myLib.deleteBookByIsbn("978-0307474278");
         System.out.println(myLib);
     }
 }
