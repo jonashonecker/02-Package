@@ -5,7 +5,26 @@ public class Library {
     private Book[] books;
 
     public Library(Book[] books) {
-        this.books = books;
+        this.books = removeNullValues(books);
+    }
+
+    private Book[] removeNullValues(Book[] books) {
+        // Count null values
+        int numberOfNullValues = 0;
+        for (Book currentBook : books) {
+            if (currentBook == null) {
+               numberOfNullValues++;
+            }
+        }
+        // Create new book array and fill with values
+        Book[] bookArrayWithoutNullValues = new Book[books.length - numberOfNullValues];
+        int counter = 0;
+        for (Book currenBook : books) {
+            if (currenBook != null) {
+                bookArrayWithoutNullValues[counter] = currenBook;
+            }
+        }
+        return bookArrayWithoutNullValues;
     }
 
     public void addBook(Book newBook){
